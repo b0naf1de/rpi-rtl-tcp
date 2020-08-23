@@ -10,7 +10,7 @@ Repository for a docker image that runs the rtl_tcp program.  Leveraging from th
 
 Run rtl_tcp in a container, exposing connections to it via port 1234.  Using --privileged and mapping the /dev/bus/usb volume, an RTL dongle is made available to the container, and clients will be able to connect via port 1234 to the docker hosts's address.
 
-        sudo docker run -d -it -p 1234:1234 --privileged -v /dev/bus/usb:/dev/bus/usb erben22/rpi-rtl-tcp
+        sudo docker run -d -p 1234:1234 --privileged -v /dev/bus/usb:/dev/bus/usb b0naf1de/rpi-rtl-tcp 
 
 ## Dockerfile Details
 

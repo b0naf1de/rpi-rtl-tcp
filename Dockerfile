@@ -11,5 +11,9 @@ ENV REFRESHED_AT 2016-05-07
 # accessiblly outisde the container on the host interface.
 
 EXPOSE 1234
-ADD launch-rtl-tcp.bash /rtl-tcp/
-ENTRYPOINT ["/rtl-tcp/launch-rtl-tcp.bash"]
+ENTRYPOINT ["rtl_tcp"]
+
+RUN mkdir -p /etc/modprobe.d && \
+ echo 'blacklist dvb_usb_rtl28xxu' > /etc/modprobe.d/raspi-blacklist.conf 
+
+ 
